@@ -16,13 +16,34 @@ nav {
     gap: 10px;
     padding: 15px;
     height: 50px;
+    position: relative;
+    width: 100vw;
+}
 
+#logo,
+#listHolder,
+#searchNbtnHolder {
+    display: flex;
+    gap: 10px;
+}
+
+#logo {
+    width: 20%;
+    height: 45px;
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+#searchNbtnHolder{
+    width: 20%;
 }
 
 nav li {
     width: auto;
     list-style-type: none;
-border: 1px solid #000;
+    border: 1px solid #000;
     background-color: rgb(255, 255, 255);
     padding: 4px 10px;
     border-radius: 20px;
@@ -33,7 +54,7 @@ border: 1px solid #000;
     cursor: pointer;
 }
 
-nav li::after {
+nav li div {
     content: "";
     background-color: rgb(0, 0, 0);
     border-radius: 50%;
@@ -45,7 +66,7 @@ nav li::after {
     transition: 0.2s linear all;
 }
 
-nav li:hover::after {
+nav li:hover div {
     bottom: 0;
     border-radius: 0;
 }
@@ -60,28 +81,28 @@ nav li p {
 }
 
 nav li:hover p {
-    
-    color: rgb(255, 255, 255);
+
+    color: var(--hover-color);
 
 }
 
-nav div #search{
-   height: 25px;
-   padding: 5px;
-   border-radius: 5px;
-   cursor:pointer;
-   background-color: none;
-   font-size: 15px;
-   border: 1px solid #000;
+nav div #search {
+    height: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: none;
+    font-size: 15px;
+    border: 1px solid var(--hover-border-color);
 }
 
-nav div #search:hover{
-   border: 2px solid #000;
-   padding: 4px;
-   background-color: rgb(234, 234, 234);
+nav div #search:hover {
+    border: 2px solid var(--hover-border-color);
+    padding: 4px;
+    background-color: var(-hover-color);
 }
 
-nav #toggle-btn{
+nav #toggle-btn {
     height: 25px;
     width: 45px;
     border: 1px solid black;
@@ -89,20 +110,46 @@ nav #toggle-btn{
     position: relative;
 
 }
-#toggle-btn #btn-ball, .ligth-ball{
-    position:absolute;
+
+nav #toggle-btn:active {
+    border: 1.4px solid black;
+
+}
+
+.light-ball {
+    position: absolute;
     height: 100%;
     /* left :0; */
-    right: 0;
-    width:50% ;
-    padding: 1px;
+    /* right: 0; */
+    width: 50%;
     border-radius: 50%;
     background-color: #000;
 }
+
 .dark-ball {
-    position:absolute;
+    position: absolute;
     height: 100%;
-    width:50% ;
+    /* left :0; */
+    right: 0;
+    width: 50%;
     border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.lightTheme {
+    color: #000000;
+    background-color: #fff;
+}
+
+.darkTheme {
+    color: white;
     background-color: #000;
+}
+
+.lightP {
+    color: #000;
+}
+
+.darkP {
+    color: #fff;
 }

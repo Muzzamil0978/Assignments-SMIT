@@ -6,19 +6,38 @@
     <title>All the assignments | Seek what you want!</title>
     <link href="style.css" rel="stylesheet" />
 </head>
-<body>
-    <nav>
-        <li> <p>Home</p> </li>
-        <li> <p>SMIT Assignments</p> </li>
-        <li> <p>MY Projects</p> </li>
-        <li> <p>Portfolio</p> </li>
-
-        <div>
-            <input id="search" placeholder="Search" type="text" />
+<body class="lightTheme">
+    <nav class="lightTheme">
+        <div id="logo"><h2>LOGO</h2></div>
+        <div id="listHolder">
+            <li class="lightTheme">
+                <div></div>
+                <p class="lightP">Home</p>
+            </li>
+            <li class="lightTheme">
+                <div></div>
+                <p class="lightP">SMIT Assignments</p>
+            </li>
+            <li class="lightTheme">
+                <div></div>
+                <p class="lightP">MY Projects</p>
+            </li>
+            <li class="lightTheme">
+                <div></div>
+                <p class="lightP">Portfolio</p>
+            </li>
         </div>
+        <div id="searchNbtnHolder">
+            <div>
+                <input class="lightTheme"
+                       id="search"
+                       placeholder="Search"
+                       type="text" />
+            </div>
 
-        <div id="toggle-btn">
-            <div id="btn-ball"></div>
+            <div id="toggle-btn">
+                <div class="light-ball" id="btn-ball"></div>
+            </div>
         </div>
     </nav>
     <script src="app.js"></script>
