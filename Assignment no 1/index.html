@@ -1,11 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pure JS Navbar Collapse</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    /* Navbar basic style */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #333;
+      color: white;
+      padding: 10px 20px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Hamburger button */
+    .menu-btn {
+      display: none;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    /* Collapsed menu for small screens */
+    .collapsed {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      background: #444;
+      padding: 10px 20px;
+    }
+
+    /* Responsive rule: below 768px */
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
 </head>
 <body>
-    
+
+  <nav class="navbar">
+    <div class="brand">MySite</div>
+    <span class="menu-btn" id="menuBtn">☰</span>
+    <ul id="navLinks">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    // Toggle menu manually on click
+    menuBtn.addEventListener("click", () => {
+      // if hidden → show, else hide
+      if (navLinks.style.display === "flex") {
+        navLinks.style.display = "none";
+      } else {
+        navLinks.style.display = "flex";
+        navLinks.style.flexDirection = "column";
+      }
+    });
+
+    // Collapse automatically when resizing
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navLinks.style.display = "flex"; // show full menu
+        navLinks.style.flexDirection = "row";
+      } else {
+        navLinks.style.display = "none"; // hide on small screen
+      }
+    });
+  </script>
+
 </body>
 </html>

@@ -14,7 +14,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     gap: 10px;
-    padding: 15px;
+    padding: 15px 35px;
     height: 50px;
     position: relative;
     width: 100vw;
@@ -28,16 +28,22 @@ nav {
 }
 
 #logo {
-    width: 20%;
+    width: 10%;
     height: 45px;
     /* background-color: aqua; */
     display: flex;
-    justify-content: center;
-    align-items: center;    
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 35px;
+    font-weight: 900;
+    z-index: 9;
 }
 
-#searchNbtnHolder{
-    width: 20%;
+#searchNbtnHolder {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 23.5%;
 }
 
 nav li {
@@ -102,13 +108,61 @@ nav div #search:hover {
     background-color: var(-hover-color);
 }
 
-nav #toggle-btn {
+#search1 {
     height: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* background-color: rgb(234, 234, 0); */
+    font-size: 15px;
+    border: 1px solid var(--hover-border-color);
+}
+
+#search1:hover {
+    border: 2px solid var(--hover-border-color);
+    padding: 4px;
+    background-color: var(-hover-color);
+}
+
+#verticalNav{
+
+    height:100vh;
+    width: 200px;
+    background-color: rgba(238, 238, 238, 0.653);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    padding: 40px 20px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    left: -100%;
+    transition: 33.5 ease all;
+    border: 10px solid blur(rgba(0, 0, 0, 0.769));
+}
+
+#verticalNav div li{
+    list-style-type: none;
+    color: rgb(0, 0, 0);
+    z-index: 9;
+    transition: 0.2s linear all;
+    position: relative;
+    font-size: 18px;
+    font-weight: 100;
+    margin-top: 25px;
+}
+
+
+nav #toggle-btn {
+    height: 20px;
     width: 45px;
     border: 1px solid black;
     border-radius: 15px;
     position: relative;
-
+    transition: .2 ease all;
+    display: flex;
+    align-items: center;
 }
 
 nav #toggle-btn:active {
@@ -118,19 +172,21 @@ nav #toggle-btn:active {
 
 .light-ball {
     position: absolute;
-    height: 100%;
+    height: 4.5vh;
     /* left :0; */
     /* right: 0; */
     width: 50%;
+    transition: .5s ease all;
     border-radius: 50%;
     background-color: #000;
 }
 
 .dark-ball {
     position: absolute;
-    height: 100%;
+    height: 4.5vh;
     /* left :0; */
     right: 0;
+    transition: .5s ease all;
     width: 50%;
     border-radius: 50%;
     background-color: #ffffff;
@@ -152,4 +208,468 @@ nav #toggle-btn:active {
 
 .darkP {
     color: #fff;
+}
+
+#menu {
+    display: none;
+}
+
+@media only screen and (max-width: 1080px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 35px;
+        height: 40px;
+        position: relative;
+        width: 100vw;
+    }
+
+    #logo,
+    #listHolder,
+    #searchNbtnHolder {
+        display: flex;
+        gap: 10px;
+    }
+
+    #logo {
+        width: 10%;
+        height: 30px;
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 25px;
+        font-weight: 600;
+    }
+
+    #searchNbtnHolder {
+        width: 30%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav li {
+        width: auto;
+        list-style-type: none;
+        border: 1px solid #000;
+        background-color: rgb(255, 255, 255);
+        padding: 4px 10px;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: .3 ease all;
+        cursor: pointer;
+    }
+
+    nav li div {
+        content: "";
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        transition: 0.2s linear all;
+    }
+
+    nav li:hover div {
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    nav li p {
+        color: rgb(0, 0, 0);
+        z-index: 9;
+        transition: 0.2s linear all;
+        position: relative;
+        font-size: 14px;
+        font-weight: 100;
+    }
+
+    nav li:hover p {
+
+        color: var(--hover-color);
+
+    }
+
+    nav div #search {
+        height: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: none;
+        font-size: 12px;
+        border: 1px solid var(--hover-border-color);
+    }
+
+    nav div #search:hover {
+        border: 2px solid var(--hover-border-color);
+        padding: 4px;
+        background-color: var(-hover-color);
+    }
+
+    nav #toggle-btn {
+        height: 20px;
+        width: 40px;
+        border: 1px solid black;
+        border-radius: 15px;
+        position: relative;
+        transition: .3 ease all;
+    }
+
+    nav #toggle-btn:active {
+        border: 1.4px solid black;
+
+    }
+
+    .light-ball {
+        position: absolute;
+        height: 100%;
+        /* left :0; */
+        /* right: 0; */
+        width: 50%;
+        transition: 1.1s ease all;
+        border-radius: 50%;
+        background-color: #000;
+    }
+
+    .dark-ball {
+        position: absolute;
+        height: 100%;
+        /* left :0; */
+        right: 0;
+        transition: 1.1s ease all;
+        width: 50%;
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+
+    .lightTheme {
+        color: #000000;
+        background-color: #fff;
+    }
+
+    .darkTheme {
+        color: white;
+        background-color: #000;
+    }
+
+    .lightP {
+        color: #000;
+    }
+
+    .darkP {
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 875px) {
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 15px 25px;
+        height: 35px;
+        position: relative;
+        width: 100vw;
+
+    }
+
+    #logo,
+    #listHolder,
+    #searchNbtnHolder {
+        display: flex;
+        gap: 8px;
+    }
+
+    #logo {
+        width: 10%;
+        height: 27.5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+    }
+
+    #searchNbtnHolder {
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    nav li {
+        width: auto;
+        list-style-type: none;
+        border: 1px solid #000;
+        background-color: rgb(255, 255, 255);
+        padding: 4px 8px;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: .3 ease all;
+        cursor: pointer;
+    }
+
+    nav li div {
+        content: "";
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        transition: 0.2s linear all;
+    }
+
+    nav li:hover div {
+        bottom: 0;
+        border-radius: 0;
+    }
+
+    nav li p {
+        color: rgb(0, 0, 0);
+        z-index: 9;
+        transition: 0.2s linear all;
+        position: relative;
+        font-size: 12px;
+        font-weight: 100;
+    }
+
+    nav li:hover p {
+
+        color: var(--hover-color);
+
+    }
+
+    nav div #search {
+        height: 18px;
+        padding: 3px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: none;
+        font-size: 12px;
+        border: 1px solid var(--hover-border-color);
+    }
+
+    nav div #search:hover {
+        border: 2px solid var(--hover-border-color);
+        padding: 4px;
+        background-color: var(-hover-color);
+    }
+
+    nav #toggle-btn {
+        height: 20px;
+        width: 35px;
+        border: 1px solid black;
+        border-radius: 15px;
+        position: relative;
+        transition: .3 ease all;
+    }
+
+    nav #toggle-btn:active {
+        border: 1.4px solid black;
+
+    }
+
+    .light-ball {
+        position: absolute;
+        height: 100%;
+        /* left :0; */
+        /* right: 0; */
+        width: 50%;
+        transition: 1.1s ease all;
+        border-radius: 50%;
+        background-color: #000;
+    }
+
+    .dark-ball {
+        position: absolute;
+        height: 100%;
+        /* left :0; */
+        right: 0;
+        transition: 1.1s ease all;
+        width: 50%;
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+
+    .lightTheme {
+        color: #000000;
+        background-color: #fff;
+    }
+
+    .darkTheme {
+        color: white;
+        background-color: #000;
+    }
+
+    .lightP {
+        color: #000;
+    }
+
+    .darkP {
+        color: #fff;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 18px;
+        height: 35px;
+        position: relative;
+        width: 100vw;
+    }
+
+    #logo,
+    #listHolder,
+    #searchNbtnHolder {
+        display: flex;
+        gap: 8px;
+    }
+
+    #listHolder {
+        display: none;
+        flex-direction: column;
+    }
+
+    #logo {
+        width: 50%;
+        height: 27.5px;
+        /* background-color: aqua; */
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #searchNbtnHolder {
+        width: 50%;
+
+    }
+
+    nav li {
+        width: auto;
+        list-style-type: none;
+        border: 1px solid #000;
+        background-color: rgb(255, 255, 255);
+        padding: 4px 8px;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        transition: .3 ease all;
+        cursor: pointer;
+    }
+
+    nav li div {
+        content: "";
+        background-color: rgb(0, 0, 0);
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -100%;
+        display: none;
+        transition: 0.2s linear all;
+    }
+
+    nav li p {
+        color: rgb(0, 0, 0);
+        z-index: 9;
+        transition: 0.2s linear all;
+        position: relative;
+        font-size: 10px;
+        font-weight: 100;
+    }
+
+    nav li:hover p {
+
+        color: var(--hover-color);
+
+    }
+
+    nav div #search {
+        height: 18px;
+        padding: 3px;
+        border-radius: 5px;
+        cursor: pointer;
+        background-color: none;
+        font-size: 12px;
+        border: 1px solid var(--hover-border-color);
+        display: none;
+    }
+
+    nav div #search:hover {
+        border: 2px solid var(--hover-border-color);
+        padding: 4px;
+        background-color: var(-hover-color);
+    }
+
+    nav #toggle-btn {
+        height: 20px;
+        width: 35px;
+        border: 1px solid black;
+        border-radius: 15px;
+        position: relative;
+        transition: .3 ease all;
+    }
+
+    nav #toggle-btn:active {
+        border: 1.4px solid black;
+
+    }
+
+    .light-ball {
+        position: absolute;
+        height: 100%;
+        /* left :0; */
+        /* right: 0; */
+        width: 50%;
+        transition: 1.1s ease all;
+        border-radius: 50%;
+        background-color: #000;
+    }
+
+    .dark-ball {
+        position: absolute;
+        height: 100%;
+        /* left :0; */
+        right: 0;
+        transition: 1.1s ease all;
+        width: 50%;
+        border-radius: 50%;
+        background-color: #ffffff;
+    }
+
+    .lightTheme {
+        color: #000000;
+        background-color: #fff;
+    }
+
+    .darkTheme {
+        color: white;
+        background-color: #000;
+    }
+
+    .lightP {
+        color: #000;
+    }
+
+    .darkP {
+        color: #fff;
+    }
+
+    #menu {
+        display: inline-block;
+    }
 }

@@ -5,10 +5,15 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>All the assignments | Seek what you want!</title>
     <link href="style.css" rel="stylesheet" />
+    <link crossorigin="anonymous"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          referrerpolicy="no-referrer"
+          rel="stylesheet" />
 </head>
 <body class="lightTheme">
     <nav class="lightTheme">
-        <div id="logo"><h2>LOGO</h2></div>
+        <div id="logo">LOGO</div>
         <div id="listHolder">
             <li class="lightTheme">
                 <div></div>
@@ -38,8 +43,27 @@
             <div id="toggle-btn">
                 <div class="light-ball" id="btn-ball"></div>
             </div>
+            <div id="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </div>
     </nav>
+    <div id="verticalNav">
+        <div>
+            <li>Home</li>
+            <li>SMIT Assignments</li>
+            <li>MY Projects</li>
+            <li>Portfolio</li>
+        </div>
+        <div>
+            <input class="lightTheme"
+                   id="search1"
+                   placeholder="Search"
+                   type="text" />
+        </div>
+        <div id="contact"></div>
+    </div>
+    <main></main>
     <script src="app.js"></script>
 </body>
 </html>
